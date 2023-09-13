@@ -1,0 +1,39 @@
+<!-- plantilla Thymeleaf  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div th:text="${usuario.nombre}"></div>
+    <div th:text="${usuario.apellido}"></div>
+    <div th:if="${usuario.email}" th:text="${usuario.email}"></div>
+    <div th:if="${usuario.email == null}" th:text="'No existe correo'"></div>
+
+    <!-- This is to test the addUsersAtributes funtion that should add the users attrib to all other fuctions -->
+    <!-- <h1 th:text = "${title}"></h1>
+    <div th:if = "${usuarios.size() == 0}"> No hay usuarios en la lista!!</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>e-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.apellido}"></td>
+                <td th:text="${usuario.email}"></td>
+            </tr>
+        </tbody>
+    </table> -->
+
+</body>
+
+</html>
