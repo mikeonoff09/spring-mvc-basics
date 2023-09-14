@@ -1,5 +1,6 @@
 package com.mikels.web.app.spring_web_app_1.controllers;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,17 @@ import java.util.List;
 @RequestMapping("/app")
 public class IndexController {
 
+    // notice that here we use $ not @ like in the html file
+    @Value("${texto.indexcontroller.index.title}")
+    private String textoIndex;
+    @Value("${texto.indexcontroller.profile.title}")
+    private String textoProfile;
+    @Value("${texto.indexcontroller.listar.title}")
+    private String textoListar;
+
     @GetMapping({ "/index", "/", "/home " })
     public String index(Model model) {
-        model.addAttribute("title", "Spring Web App 1");
+        model.addAttribute("title", textoIndex);
         return "index";
     }
 
@@ -30,11 +39,12 @@ public class IndexController {
         user.setApellido("Lara");
         user.setEmail("miguel@mail.com");
         model.addAttribute("usuario", user);
-        model.addAttribute("title", user.getNombre() + " Profile Page");
+        model.addAttribute("title", user.getNombre() + textoProfile);
         return "profile";
     }
 
-    // @RequestMapping("/listar") // Should use a presice mapping anotation like @Getmapping or @PutMapping
+    // @RequestMapping("/listar") // Should use a presice mapping anotation like
+    // @Getmapping or @PutMapping
     @GetMapping("/listar")
     public String listar(Model model) {
         // a way to add attributes to the model
@@ -46,14 +56,14 @@ public class IndexController {
         // Atribute added in the addUsersAttributes
         // Another way to add is using the Arrays.asList
         // List<Usuario> usuarios = Arrays.asList(
-        //         new Usuario("Miguel", "Lara", "miguel.lara@gmail.com"),
-        //         new Usuario("Jhon", "Doe", "jhon.doe@gmail.com"),
-        //         new Usuario("Jane", "Doe", "jane.doe@gmail.com"),
-        //         new Usuario("Olger", "Doe", "olger.doe@gmail.com"));
+        // new Usuario("Miguel", "Lara", "miguel.lara@gmail.com"),
+        // new Usuario("Jhon", "Doe", "jhon.doe@gmail.com"),
+        // new Usuario("Jane", "Doe", "jane.doe@gmail.com"),
+        // new Usuario("Olger", "Doe", "olger.doe@gmail.com"));
 
         // model.addAttribute("usuarios", usuarios);
 
-        model.addAttribute("title", "Listado de Usuarios");
+        model.addAttribute("title", textoListar);
         return "listar";
     }
 
