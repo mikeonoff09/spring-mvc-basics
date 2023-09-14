@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mikels.web.app.spring_mvc_basics.models.Usuario;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

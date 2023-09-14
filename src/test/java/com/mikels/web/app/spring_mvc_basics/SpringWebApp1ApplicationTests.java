@@ -1,4 +1,4 @@
-package com.mikels.web.app.spring_web_app_1;
+package com.mikels.web.app.spring_mvc_basics;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
