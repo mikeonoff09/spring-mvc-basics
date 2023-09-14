@@ -1,0 +1,11 @@
+h1.color_rojo {
+  color: red;
+}
+h2.color_azul {
+  color: blue;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}

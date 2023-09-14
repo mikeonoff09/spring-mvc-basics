@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, initial-scale=1.0">
     <title th:text = "${title}">Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1 th:text = "${title}"></h1> 
+    <h1 class = "color_rojo" th:text = "${title}"></h1> 
+    <h2 class = "color_azul" >"Decorando con estilos CSS recursos estáticos"</h1> 
     <div>Hola Mundirijillo </div> 
-     
+     <img th:src="@{/images/spring.png  }" alt="No image">
 </body>
+<style>
+    /* Can add here or in the static/css/style.css file */
+</style>
 </html>
