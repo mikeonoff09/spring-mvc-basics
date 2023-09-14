@@ -1,4 +1,4 @@
-package com.mikels.web.app.spring_web_app_1.models;
+package com.mikels.web.app.spring_mvc_basics.models;
 
 public class Usuario {
     private String nombre;

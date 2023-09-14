@@ -1,4 +1,4 @@
-package com.mikels.web.app.spring_web_app_1.controllers;
+package com.mikels.web.app.spring_mvc_basics.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

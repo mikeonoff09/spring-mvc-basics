@@ -1,4 +1,4 @@
-package com.mikels.web.app.spring_web_app_1.controllers;
+package com.mikels.web.app.spring_mvc_basics.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mikels.web.app.spring_web_app_1.models.Usuario;
+import com.mikels.web.app.spring_mvc_basics.models.Usuario;
 
 import java.util.ArrayList;
 import java.util.Arrays;
