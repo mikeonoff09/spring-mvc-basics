@@ -10,6 +10,7 @@ public class HomeController {
      * forward the parameters are not lost, the route is maintained
      * use forward only for controller routes
      */
+    // a comment to test something
     @GetMapping("/home")
     private String home(){
         return "forward:/app/index";
