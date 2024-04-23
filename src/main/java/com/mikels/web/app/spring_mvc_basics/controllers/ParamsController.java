@@ -26,7 +26,7 @@ public class ParamsController {
      * validations for a null in the parameter
     */
     @GetMapping("/string")
-    public String param(@RequestParam(name = "text", required = false) String text, Model model) {
+    public String param(@RequestParam(required = false) String text, Model model) {
         model.addAttribute("textito", "Texto enviado: " + text);
         return "params/string";
     }

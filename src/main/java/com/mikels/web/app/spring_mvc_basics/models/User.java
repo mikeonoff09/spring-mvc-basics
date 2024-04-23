@@ -1,17 +1,17 @@
 package com.mikels.web.app.spring_mvc_basics.models;
 
-public class Usuario {
+public class User {
     private String nombre;
     private String apellido;
     private String email;
 
-    public Usuario(String nombre, String apellido, String email) {
+    public User(String nombre, String apellido, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
     }
 
-    public Usuario() {
+    public User() {
     }
 
     public String getNombre() {

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mikels.web.app.spring_mvc_basics.models.Usuario;
+import com.mikels.web.app.spring_mvc_basics.models.User;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +33,7 @@ public class IndexController {
     // @RequestMapping("/profile")
     @GetMapping("/profile")
     public String profile(Model model) {
-        Usuario user = new Usuario();
+        User user = new User();
         user.setNombre("Miguel");
         user.setApellido("Lara");
         user.setEmail("miguel@mail.com");
@@ -69,11 +69,11 @@ public class IndexController {
     // This adds atributes for all the other methods
     @ModelAttribute
     public void addUsersAttributes(Model model) {
-        List<Usuario> usuarios = Arrays.asList(
-                new Usuario("Miguel", "Lara", "miguel.lara@gmail.com"),
-                new Usuario("Jhon", "Doe", "jhon.doe@gmail.com"),
-                new Usuario("Jane", "Doe", "jane.doe@gmail.com"),
-                new Usuario("Olger", "Doe", "olger.doe@gmail.com"));
+        List<User> usuarios = Arrays.asList(
+                new User("Miguel", "Lara", "miguel.lara@gmail.com"),
+                new User("Jhon", "Doe", "jhon.doe@gmail.com"),
+                new User("Jane", "Doe", "jane.doe@gmail.com"),
+                new User("Olger", "Doe", "olger.doe@gmail.com"));
         model.addAttribute("usuarios", usuarios);
     }
 
