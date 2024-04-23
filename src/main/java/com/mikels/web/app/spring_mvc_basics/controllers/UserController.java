@@ -1,7 +1,6 @@
 package com.mikels.web.app.spring_mvc_basics.controllers;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
