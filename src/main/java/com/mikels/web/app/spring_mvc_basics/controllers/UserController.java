@@ -1,6 +1,7 @@
 package com.mikels.web.app.spring_mvc_basics.controllers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import com.mikels.web.app.spring_mvc_basics.models.User;
 @RequestMapping("/api/user")
 public class UserController {
 
-    @RequestMapping("/get/one")
+    @RequestMapping("/one")
     public UserDto getUser() {
         User user = new User("Mikel", "Lara", "email@mail.com");
         UserDto userDto = new UserDto(user, "Mr.");
@@ -23,7 +24,7 @@ public class UserController {
     }
 
     // Different structure of data returned
-    @RequestMapping("/get/one2")
+    @RequestMapping("/one2")
     public UserDto2 getUserDto2() {
         User user = new User("Mikel", "Lara", "email@mail.com");
         UserDto2 userDto2 = new UserDto2(user, "Mr.");
@@ -31,21 +32,28 @@ public class UserController {
         return userDto2;
     }
 
-    @RequestMapping("/get/list")
+    @RequestMapping("/list")
     public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<UserDto>();
         User user = new User("Mikel", "Lara", "email@mail.com");
         UserDto userDto = new UserDto(user, "Mr.");
         UserDto userDto2 = new UserDto(user, "Master");
         UserDto userDto3 = new UserDto(user, "Doctor");
-        userList.add(userDto);
-        userList.add(userDto2);
-        userList.add(userDto3);
-        return userList;
+
+        // This is one way to create a list
+        // List<UserDto> users = new ArrayList<UserDto>();
+        // users.add(userDto);
+        // users.add(userDto2);
+        // users.add(userDto3);
+
+        // Another way to create a list
+        // no 'new' keyword here for Arrays
+        List<UserDto> users =  Arrays.asList(userDto, userDto2,userDto3);
+
+        return users;
     }
 
     // Different structure of data returned
-    @RequestMapping("/get/list2")
+    @RequestMapping("/list2")
     public List<UserDto2> getUserDto2List() {
         List<UserDto2> userList = new ArrayList<UserDto2>();
         User user = new User("Mikel", "Lara", "email@mail.com");

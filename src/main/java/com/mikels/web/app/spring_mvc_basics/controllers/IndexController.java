@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mikels.web.app.spring_mvc_basics.models.User;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class IndexController {
         User user = new User();
         user.setNombre("Miguel");
         user.setApellido("Lara");
-        user.setEmail("miguel@mail.com");
+        // user.setEmail("miguel@mail.com");
         model.addAttribute("usuario", user);
         model.addAttribute("title", user.getNombre() + textoProfile);
         return "profile";
@@ -47,20 +48,20 @@ public class IndexController {
     @GetMapping("/listar")
     public String listar(Model model) {
         // a way to add attributes to the model
-        // List<Usuario> usuarios = new ArrayList<Usuario>();
-        // usuarios.add(new Usuario("Miguel", "Lara", "miguel.lara@gmail.com"));
-        // usuarios.add(new Usuario("Jhon", "Doe", "jhon.doe@gmail.com"));
-        // usuarios.add(new Usuario("Jane", "Doe", "jane.doe@gmail.com"));
+        List<User> users = new ArrayList<User>();
+        users.add(new User("Miguel", "Lara", "miguel.lara@gmail.com"));
+        users.add(new User("Jhon", "Doe", "jhon.doe@gmail.com"));
+        users.add(new User("Jane", "Doe", "jane.doe@gmail.com"));
 
         // Atribute added in the addUsersAttributes
         // Another way to add is using the Arrays.asList
-        // List<Usuario> usuarios = Arrays.asList(
-        // new Usuario("Miguel", "Lara", "miguel.lara@gmail.com"),
-        // new Usuario("Jhon", "Doe", "jhon.doe@gmail.com"),
-        // new Usuario("Jane", "Doe", "jane.doe@gmail.com"),
-        // new Usuario("Olger", "Doe", "olger.doe@gmail.com"));
+        // List<User> users = Arrays.asList(
+        // new User("Miguel", "Lara", "miguel.lara@gmail.com"),
+        // new User("Jhon", "Doe", "jhon.doe@gmail.com"),
+        // new User("Jane", "Doe", "jane.doe@gmail.com"),
+        // new User("Olger", "Doe", "olger.doe@gmail.com"));
 
-        // model.addAttribute("usuarios", usuarios);
+        model.addAttribute("usuarios", users);
 
         model.addAttribute("title", textoListar);
         return "listar";
