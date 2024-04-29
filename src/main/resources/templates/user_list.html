@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 th:text="${title}"></h1>
+    <!-- THIS WILL FAIL THE PAGE IF NO "users" OBJECT IS IN THE TAMPLATE -->
+    <div th:if = "${users.size() == 0}"> No hay users en la lista!!</div>
+    <!-- SOME BOOTSTRAP -->
+    <!-- <table class="table table-striped"> -->
+    <!-- <table class="table table-bordered"> -->
+    <!-- <table class="table table-responsive"> -->
+    <table class="table table-responsive table-striped">
+    <!-- <table class="table table-sm table-dark table-responsive table-striped"> -->
+        <!-- <table class="table table-striped"> -->
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>e-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.nombre}"></td>
+                <td th:text="${user.apellido}"></td>
+                <td th:text="${user.email}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
